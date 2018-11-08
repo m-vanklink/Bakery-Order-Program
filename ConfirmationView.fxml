@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="confirmationView" prefHeight="500.0" prefWidth="600.0" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="VSBakery.ConfirmationViewController">
+   <children>
+      <Label alignment="CENTER" layoutX="214.0" layoutY="7.0" prefHeight="27.0"
+             prefWidth="171.0" text="Order Confirm" textFill="#350ad1">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <HBox layoutY="41.0" prefHeight="85.0" prefWidth="600.0" style="-fx-border-style: solid;">
+         <children>
+            <VBox prefHeight="85.0" prefWidth="342.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="33.0" prefWidth="120.0" text="Customer Name: ">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="customerName" prefHeight="33.0" prefWidth="170.0">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="33.0" prefWidth="130.0" text="Order Number: ">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="orderNumber" prefHeight="33.0" prefWidth="170.0">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="20.0" layoutY="10.0" prefHeight="85.0" prefWidth="342.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="33.0" prefWidth="120.0" text="Order Date:">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="orderDate" alignment="CENTER"
+                               prefHeight="33.0" prefWidth="200.0">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="33.0" prefWidth="120.0" text="Pickup Date:">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="pickupDate" alignment="CENTER" prefHeight="33.0" prefWidth="200.0">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <ScrollPane layoutY="126.0" prefHeight="187.0" prefWidth="600.0">
+         <content>
+            <AnchorPane prefHeight="0.0" prefWidth="598.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="-3.0" layoutY="25.0" prefHeight="25.0" prefWidth="600.0" spacing="10.0" style="-fx-border-style: solid;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="23.0" prefWidth="100.0" text="Item">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="100.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" text="Size">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="309.0" layoutY="10.0" prefHeight="25.0" prefWidth="120.0" text="Flavour">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="349.0" layoutY="10.0" prefHeight="25.0" prefWidth="100.0" text="Quantity">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="389.0" layoutY="10.0" prefHeight="23.0" prefWidth="120.0" text="Price">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox id="itemVbox" layoutX="20.0" layoutY="51.0" prefHeight="50.0" prefWidth="100.0" spacing="5.0">
+											  <Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="item1">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+												<Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="item2">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+									</VBox>
+                  <VBox id="sizeVBox" layoutX="130.0" layoutY="51.0" prefHeight="50.0" prefWidth="80.0" spacing="5.0">
+												<Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="size1">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+												<Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="size2">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+									</VBox>
+                  <VBox id="falVBox" layoutX="215.0" layoutY="51.0" prefHeight="50.0" prefWidth="120.0" spacing="5.0">
+											  <Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="flavour1">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+												<Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="flavour2">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+									</VBox>
+                  <VBox id="qtyVBox" layoutX="345.0" layoutY="51.0" prefHeight="50.0" prefWidth="100.0" spacing="5.0">
+												<Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="qty1">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+												<Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="qty2">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+									</VBox>
+                  <VBox id="priceVBox" layoutX="460.0" layoutY="51.0" prefHeight="50.0" prefWidth="120.0" spacing="5.0">
+										<Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="price1">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+												<Label alignment="CENTER" prefHeight="23.0" prefWidth="120.0" fx:id="price2">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+									</VBox>
+                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="598.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="205.0" text="Order Information">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <VBox layoutX="374.0" layoutY="309.0" prefHeight="120.0" prefWidth="223.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="87.0" text="Sub Total: ">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="subTotal" prefHeight="30.0" prefWidth="120.0">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="87.0" text="HST:">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="hstTax" prefHeight="30.0" prefWidth="120.0">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="223.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="87.0" text="Total: ">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="total" prefHeight="30.0" prefWidth="120.0">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="back" layoutX="377.0" layoutY="446.0" onAction="#handleBackAction"
+              mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Back">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="pay" layoutX="486.0" layoutY="446.0" onAction="#handlePayAction"
+              mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Confirm">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

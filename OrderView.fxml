@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="orderView" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VSBakery.OrderViewController">
+    <children>
+      <HBox layoutX="14.0" layoutY="18.0" prefHeight="31.0" prefWidth="165.0">
+         <children>
+            
+            <Label prefHeight="25.0" prefWidth="81.0" text="Order #: " textFill="#1a099e">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="orderNumber" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" textFill="#1a099e">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+        <Label layoutX="14.0" layoutY="87.0" text="Pickup Date: ">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+        </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="243.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="39.0" prefWidth="100.0" text="Order" textAlignment="CENTER" textFill="#06067e">
+         <font>
+            <Font name="Arial Bold" size="34.0" />
+         </font>
+         
+         <effect>
+            <Glow />
+         </effect>
+         
+      </Label>
+      
+      <DatePicker fx:id="pickupDate" layoutX="110.0" layoutY="85.0" />
+      
+      <Label fx:id="currentDate" layoutX="441.0" layoutY="23.0" prefHeight="21.0" prefWidth="184.0" text=" " textFill="#1a099e">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <BorderPane layoutX="10.0" layoutY="121.0" prefHeight="202.0" prefWidth="606.0" style="-fx-border-style: solid;" AnchorPane.topAnchor="121.0">
+         <top>
+            <CheckBox fx:id="cake" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Cake" BorderPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </CheckBox>
+         </top>
+         
+         <left>
+            <VBox fx:id="sizeVBox" prefHeight="123.0" prefWidth="160.0" spacing="10.0">
+               <children>
+                  <Label alignment="TOP_CENTER" prefHeight="16.0" prefWidth="69.0" text="Size" underline="true">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="small" mnemonicParsing="false"  text="Small" userData="S" selected="true">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sizeGroup" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="medium" mnemonicParsing="false"  text="Medium" toggleGroup="$sizeGroup" userData="M" />
+                  <RadioButton fx:id="large" mnemonicParsing="false" text="Large" toggleGroup="$sizeGroup" userData="L" />
+               </children>
+               <padding>
+                  <Insets left="70.0" top="10.0" />
+               </padding>
+            </VBox>
+         </left>
+         
+         <padding>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </padding>
+         
+         <bottom>
+            <HBox prefHeight="42.0" prefWidth="650.0" spacing="140.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="45.0" text="QTY:">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cakeQTY" prefHeight="25.0" prefWidth="149.0">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </TextField>
+                     </children>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="37.0" prefWidth="215.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="50.0" text="Cost: ">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="cakePrice" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="127.0" style="-fx-border-style: solid;" styleClass="cakeCost">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </HBox>
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="10.0" />
+               </opaqueInsets>
+            </HBox>
+         </bottom>
+         <opaqueInsets>
+            <Insets bottom="10.0" />
+         </opaqueInsets>
+         <center>
+            <VBox fx:id="priceVBox" prefHeight="123.0" prefWidth="206.0" spacing="10.0" BorderPane.alignment="CENTER">
+               
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <children>
+                  <VBox fx:id="flaVBox" prefHeight="123.0" prefWidth="340.0" spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="78.0" text="Flavour" underline="true">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        
+                              <RadioButton fx:id="strawberry" mnemonicParsing="false" text="Strawberry" userData="Strawberry" selected="true">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="cakeFlaGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="chocolate" mnemonicParsing="false" text="Chocolate" toggleGroup="$cakeFlaGroup" userData="Chocolate" />
+                        <RadioButton fx:id="fruit" mnemonicParsing="false" text="Fruit" toggleGroup="$cakeFlaGroup" userData="Fruit" />
+                     </children>
+                     
+                           <padding>
+                        <Insets left="70.0" />
+                     </padding>
+                     
+                        </VBox>
+               </children>
+               
+            </VBox>
+         </center>
+      </BorderPane>
+      <VBox layoutX="10.0" layoutY="333.0" prefHeight="109.0" prefWidth="606.0" style="-fx-border-style: solid;">
+         <children>
+            <CheckBox fx:id="pie" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="23.0" prefWidth="119.0" text="Pie">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </CheckBox>
+            <HBox id="flaHBox" alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="591.0" spacing="20.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="114.0" text="Flavour:" underline="true">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="blueberry" mnemonicParsing="false" prefHeight="17.0" prefWidth="88.0" text="Blueberry" userData="Blueberry" selected="true">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="pieFlavour" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="pumpkin" layoutX="76.0" layoutY="21.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="81.0" text="Pumpkin" toggleGroup="$pieFlavour" userData="Pumpkin">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="apple" layoutX="187.0" layoutY="21.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="72.0" text="Apple" toggleGroup="$pieFlavour" userData="Apple">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="pecan" layoutX="245.0" layoutY="21.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="72.0" text="Pecan" toggleGroup="$pieFlavour" userData="Pecan">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="669.0" spacing="220.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="45.0" text="QTY:">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="pieQTY">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </TextField>
+                     </children>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="37.0" prefWidth="215.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="50.0" text="Cost: ">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="piePrice" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="127.0" style="-fx-border-style: solid;" styleClass="pieCost">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <Button id="back" layoutX="350.0" layoutY="454.0" onAction="#handleBackAction" prefHeight="31.0" prefWidth="114.0" text="Back" />
+      <Button id="prcess" layoutX="496.0" layoutY="454.0" onAction="#handleProcessOrderAction" prefHeight="31.0" prefWidth="114.0" text="Process" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="clientInfoView" prefHeight="500.0" prefWidth="600.0" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="VSBakery.ClientInfoViewController">
+   <children>
+      <Label layoutX="177.0" layoutY="20.0" prefHeight="35.0" prefWidth="212.0" 
+             text="Client Information">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="95.0" prefHeight="35.0" 
+            prefWidth="250.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="77.0" text="First Name: ">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="firstName" prefHeight="25.0" prefWidth="170.0" 
+                   textFill="#08156e">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="143.0" 
+            prefHeight="35.0" prefWidth="250.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="77.0" text="Last Name: ">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lastName" prefHeight="25.0" prefWidth="170.0" 
+                   textFill="#08156e">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="30.0" layoutY="203.0" prefHeight="137.0" prefWidth="250.0">
+         <children>
+            <Label alignment="TOP_LEFT" prefHeight="25.0" prefWidth="77.0" 
+                   text="Address: ">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="address" alignment="TOP_LEFT" prefHeight="81.0" 
+                   prefWidth="170.0" textFill="#08156e">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="321.0" layoutY="95.0" 
+            prefHeight="35.0" prefWidth="250.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="105.0" text="Phone Number: ">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="phoneNum" prefHeight="25.0" prefWidth="140.0" 
+                   textFill="#08156e">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="321.0" layoutY="143.0" 
+            prefHeight="35.0" prefWidth="250.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="105.0" text="Email Address:">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="email" prefHeight="25.0" prefWidth="137.0" 
+                   textFill="#08156e">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button fx:id="next" layoutX="468.0" layoutY="322.0" onAction="#handleNextAction" 
+              prefHeight="35.0" prefWidth="68.0" text="Next">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="back" layoutX="389.0" layoutY="322.0" onAction="#handleBackAction" 
+              prefHeight="35.0" prefWidth="68.0" text="Back">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
